@@ -1,0 +1,6 @@
+scenarios:
+  - name: "Test Exchange rate api and count the currencies available"
+    flow:
+      - get:
+          afterResponse: countCurrency
+          url: "/v6/1fc80820c72b0163bc9c7536/latest/USD"

@@ -1,0 +1,12 @@
+config:
+  http:
+    timeout: 30000
+  plugins:
+    expect: {}
+  environments:
+    dev:
+      target: 'https://v6.exchangerate-api.com'
+      phases:
+        - duration: 1
+          arrivalRate: 1
+  processor: ../processors/processor.js
