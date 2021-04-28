@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "exchange rate",
+			"name": "exchange rate1",
 			"event": [
 				{
 					"listen": "test",
