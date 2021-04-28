@@ -1,0 +1,57 @@
+{
+	"info": {
+		"_postman_id": "3e99de32-751a-4cac-9e11-d8808321c6a1",
+		"name": "API test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "exchange rate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response have GBP currency\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    const currencies = Object.keys(jsonData.conversion_rates);\r",
+							"    pm.expect(currencies).to.includes('GBP', 'GBP currency is not present');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Count the currencies\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    const currencies = Object.keys(jsonData.conversion_rates);\r",
+							"    console.log(`Total currencies: ${currencies.length}`)\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/v6/1fc80820c72b0163bc9c7536/latest/USD",
+					"protocol": "https",
+					"host": [
+						"v6",
+						"exchangerate-api",
+						"com"
+					],
+					"path": [
+						"v6",
+						"1fc80820c72b0163bc9c7536",
+						"latest",
+						"USD"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

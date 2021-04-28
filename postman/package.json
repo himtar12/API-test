@@ -1,0 +1,25 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "API test",
+  "main": "index.js",
+  "dependencies": {
+    "@types/node": "^15.0.0",
+    "commander": "^7.0.0",
+    "newman": "^5.2.0",
+    "newman-reporter-junitfull": "^1.1.1",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.2.0",
+    "xml-escape": "^1.1.0"
+  },
+  "scripts": {
+    "test": "node runner.js -e devshell",
+    "tsc": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tarun0909/API-test.git"
+  },
+  "author": "Tarun Chaudhary",
+  "license": "ISC"
+}
